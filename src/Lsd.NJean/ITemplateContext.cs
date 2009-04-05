@@ -23,6 +23,12 @@ namespace Lsd.NJean
 
     #endregion
 
+    /// <summary>
+    /// Base interface that describes template context.
+    /// </summary>
+    /// <author>
+    /// <a href="mailto:diadistis@gmail.com">Vasilis Sotirids</a>
+    /// </author>
     [SuppressMessage
         ("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", 
         Justification = "Context is a much better suffix than Dictionary.")]
