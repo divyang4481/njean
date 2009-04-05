@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<project name="NJean" default="compile-debug" xmlns="http://nant.sf.net/schemas/nant.xsd">
+
+	<loadtasks assembly="tools\StyleCopCmd\StyleCopCmd.Core.dll" />
+
+	<target name="compile-debug" description="Compiles using the AutomatedDebug Configuration">
+		<msbuild project="src\Lsd.NJean.sln">
+			<property name="configuration" value="Debug" />
+			<property name="target" value="Build" />
+		</msbuild>
+	</target>
+  
+	<target name="compile-release">
+		<msbuild project="src\Lsd.NJean.sln">
+			<property name="configuration" value="Release" />
+			<property name="target" value="Build" />
+		</msbuild>
+		<styleCopCmd
+			outputXmlFile="build\stylecop.xml"
+			transformFile="tools\StyleCopCmd\StyleCopReport.xsl"
+			styleCopSettingsFile="src\Settings.StyleCop"
+			processorSymbols="RELEASE,CODE_ANALYSIS"
+			ignorePatterns="AssemblyInfo\.cs">
+			<solutionFiles>
+				<include name="src\Lsd.NJean.sln" />
+			</solutionFiles>
+		</styleCopCmd>
+	</target>
+	
+	<target name="code-analysis" depends="compile-debug">
+		<styleCopCmd
+			outputXmlFile="build\stylecop.xml"
+			transformFile="tools\StyleCopCmd\StyleCopReport.xsl"
+			styleCopSettingsFile="src\Settings.StyleCop"
+			processorSymbols="RELEASE,CODE_ANALYSIS"
+			ignorePatterns="AssemblyInfo\.cs">
+			<solutionFiles>
+				<include name="src\Lsd.NJean.sln" />
+			</solutionFiles>
+		</styleCopCmd>
+		<exec program="tools\FxCop\FxCopCmd.exe" commandline="/p:src\NJean.fxcop /o:build\fxcop.xml" failonerror="false"/>
+		<style style="tools\FxCop\Xml\CodeAnalysisReport.xsl" in="build\fxcop.xml" out="build\fxcop.html" />
+	</target>
+	
+</project>

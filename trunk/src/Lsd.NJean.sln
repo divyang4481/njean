@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lsd.NJean", "Lsd.NJean.csproj", "{C7694904-095C-4E62-8AF0-A4482F5F8B1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lsd.NJean", "Lsd.NJean\Lsd.NJean.csproj", "{C7694904-095C-4E62-8AF0-A4482F5F8B1D}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
