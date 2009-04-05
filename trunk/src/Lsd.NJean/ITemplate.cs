@@ -18,24 +18,27 @@ namespace Lsd.NJean
     #region Imports
 
     using System;
-using System.IO;
+    using System.IO;
 
     #endregion
 
     /// <summary>
-    /// ITemplate
+    /// Base interface that describes the methods templates need to implement. 
     /// </summary>
+    /// <author>
+    /// <a href="mailto:diadistis@gmail.com">Vasilis Sotirids</a>
+    /// </author>
     public interface ITemplate
     {
         /// <summary>
-        /// Renders the template using specified context.
+        /// Renders the template using the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <returns>The rendered template</returns>
+        /// <returns>The rendered template.</returns>
         string Render(ITemplateContext context);
 
         /// <summary>
-        /// Renders the template using specified context.
+        /// Renders the template using the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="writer">The writer.</param>

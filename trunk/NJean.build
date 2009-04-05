@@ -38,7 +38,7 @@
 				<include name="src\Lsd.NJean.sln" />
 			</solutionFiles>
 		</styleCopCmd>
-		<exec program="tools\FxCop\FxCopCmd.exe" commandline="/p:src\NJean.fxcop /o:build\fxcop.xml" failonerror="false"/>
+		<exec program="tools\FxCop\FxCopCmd.exe" commandline="/p:src\NJean.fxcop /fo /o:build\fxcop.xml" failonerror="false"/>
 		<style style="tools\FxCop\Xml\CodeAnalysisReport.xsl" in="build\fxcop.xml" out="build\fxcop.html" />
 	</target>
 	
