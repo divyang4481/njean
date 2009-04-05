@@ -19,10 +19,6 @@ namespace Lsd.NJean
     #region Imports
 
     using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.IO;
 
     #endregion
 
@@ -35,24 +31,34 @@ namespace Lsd.NJean
     public interface ITemplateProvider
     {
         /// <summary>
-        /// Loads a temlate from the specified string.
+        /// Loads a template from the specified source.
         /// </summary>
-        /// <param name="templateContent">The string to be loaded.</param>
+        /// <param name="templateSource">The source of the template.</param>
         /// <returns>The template.</returns>
-        ITemplate Load(string templateContent);
+        ITemplate Load(ITemplateSource templateSource);
 
         /// <summary>
-        /// Loads a temlate from the specified TextReader.
+        /// Tries to a template from the specified source.
         /// </summary>
-        /// <param name="reader">The TextReader to be loaded.</param>
-        /// <returns>The template.</returns>
-        ITemplate Load(TextReader reader);
+        /// <param name="templateSource">The source of the template.</param>
+        /// <param name="loadedTemplate">The template to be loaded.</param>
+        /// <returns><c>true</c> if the template is loaded without exceptions, <c>true</c> otherwise</returns>
+        bool TryLoad(ITemplateSource templateSource, out ITemplate loadedTemplate);
 
         /// <summary>
-        /// Loads a temlate from the specified file.
+        /// Checks if the specified source exists.
         /// </summary>
-        /// <param name="fileName">The file to be loaded.</param>
-        /// <returns>The template.</returns>
-        ITemplate LoadFromFile(string fileName);        
+        /// <param name="templateSource">The template source.</param>
+        /// <returns><c>true</c> if the source exists, <c>true</c> otherwise.</returns>
+        bool Exists(ITemplateSource templateSource);
+
+        /// <summary>
+        /// Determines whether the specified template source is trusted.
+        /// </summary>
+        /// <param name="templateSource">The template source.</param>
+        /// <returns>
+        ///    <c>true</c> if the specified template source is trusted; otherwise, <c>false</c>.
+        /// </returns>
+        bool IsTrusted(ITemplateSource templateSource);    
     }
 }

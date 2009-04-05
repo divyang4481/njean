@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ITemplate.cs" />
     <Compile Include="ITemplateContext.cs" />
+    <Compile Include="ITemplateSource.cs" />
     <Compile Include="ITemplateProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemplateContext.cs" />
