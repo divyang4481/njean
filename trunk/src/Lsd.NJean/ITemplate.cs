@@ -26,7 +26,7 @@ namespace Lsd.NJean
     /// Base interface that describes the methods templates need to implement. 
     /// </summary>
     /// <author>
-    /// <a href="mailto:diadistis@gmail.com">Vasilis Sotirids</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
     /// </author>
     public interface ITemplate
     {

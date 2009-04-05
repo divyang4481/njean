@@ -27,7 +27,7 @@ namespace Lsd.NJean
     /// Base interface that describes template context.
     /// </summary>
     /// <author>
-    /// <a href="mailto:diadistis@gmail.com">Vasilis Sotirids</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
     /// </author>
     [SuppressMessage
         ("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", 
