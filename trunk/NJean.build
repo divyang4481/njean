@@ -5,26 +5,14 @@
 
 	<target name="compile-debug" description="Compiles using the AutomatedDebug Configuration">
 		<msbuild project="src\Lsd.NJean.sln">
-			<property name="configuration" value="Debug" />
-			<property name="target" value="Build" />
+			<property name="Configuration" value="Debug" />
 		</msbuild>
 	</target>
   
 	<target name="compile-release">
 		<msbuild project="src\Lsd.NJean.sln">
-			<property name="configuration" value="Release" />
-			<property name="target" value="Build" />
+			<property name="Configuration" value="Release" />
 		</msbuild>
-		<styleCopCmd
-			outputXmlFile="build\stylecop.xml"
-			transformFile="tools\StyleCopCmd\StyleCopReport.xsl"
-			styleCopSettingsFile="src\Settings.StyleCop"
-			processorSymbols="RELEASE,CODE_ANALYSIS"
-			ignorePatterns="AssemblyInfo\.cs">
-			<solutionFiles>
-				<include name="src\Lsd.NJean.sln" />
-			</solutionFiles>
-		</styleCopCmd>
 	</target>
 	
 	<target name="code-analysis" depends="compile-debug">
