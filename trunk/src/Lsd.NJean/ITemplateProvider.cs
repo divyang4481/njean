@@ -31,11 +31,17 @@ namespace Lsd.NJean
     public interface ITemplateProvider
     {
         /// <summary>
+        /// Gets the template source.
+        /// </summary>
+        /// <value>The template source.</value>
+        ITemplateSource TemplateSource { get; }
+
+        /// <summary>
         /// Loads a template from the specified source.
         /// </summary>
         /// <param name="templateSource">The source of the template.</param>
         /// <returns>The template.</returns>
-        ITemplate Load(ITemplateSource templateSource);
+        ITemplate Load(string templateSource);
 
         /// <summary>
         /// Tries to a template from the specified source.
@@ -43,14 +49,14 @@ namespace Lsd.NJean
         /// <param name="templateSource">The source of the template.</param>
         /// <param name="loadedTemplate">The template to be loaded.</param>
         /// <returns><c>true</c> if the template is loaded without exceptions, <c>true</c> otherwise</returns>
-        bool TryLoad(ITemplateSource templateSource, out ITemplate loadedTemplate);
+        bool TryLoad(string templateSource, out ITemplate loadedTemplate);
 
         /// <summary>
         /// Checks if the specified source exists.
         /// </summary>
         /// <param name="templateSource">The template source.</param>
         /// <returns><c>true</c> if the source exists, <c>true</c> otherwise.</returns>
-        bool Exists(ITemplateSource templateSource);
+        bool Exists(string templateSource);
 
         /// <summary>
         /// Determines whether the specified template source is trusted.
@@ -59,6 +65,6 @@ namespace Lsd.NJean
         /// <returns>
         ///    <c>true</c> if the specified template source is trusted; otherwise, <c>false</c>.
         /// </returns>
-        bool IsTrusted(ITemplateSource templateSource);    
+        bool IsTrusted(string templateSource);
     }
 }
