@@ -25,10 +25,11 @@ namespace Lsd.NJean
     #endregion
 
     /// <summary>
-    /// Base interface that describes template context.
+    /// Base interface that describes a template's context.
     /// </summary>
     /// <author>
     /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
+    /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
     /// </author>
     [SuppressMessage
         ("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", 

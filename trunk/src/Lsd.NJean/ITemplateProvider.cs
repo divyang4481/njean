@@ -23,11 +23,13 @@ namespace Lsd.NJean
     #endregion
 
     /// <summary>
-    /// Base interface that describes template provider.
+    /// Base interface that describes a template provider. The provider must 
+    /// extend this interface to have access to a variety of template sources.
     /// </summary>
     /// <author>
     /// <a href="mailto:george.labak@gmail.com">Labak</a>
     /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
+    /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
     /// </author>
     public interface ITemplateProvider
     {
