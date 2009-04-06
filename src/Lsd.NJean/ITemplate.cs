@@ -31,12 +31,6 @@ namespace Lsd.NJean
     public interface ITemplate
     {
         /// <summary>
-        /// Gets a value indicating whether this instance is valid.
-        /// </summary>
-        /// <value><c>true</c> if this instance is valid; otherwise, <c>false</c>.</value>
-        bool IsValid { get; }
-
-        /// <summary>
         /// Renders the template using the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
