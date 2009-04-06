@@ -23,10 +23,11 @@ namespace Lsd.NJean
     #endregion
 
     /// <summary>
-    /// Base interface that describes template source.
+    /// Base interface that describes a template's source.
     /// </summary>
     /// <author>
     /// <a href="mailto:george.labak@gmail.com">Labak</a>
+    /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
     /// </author>
     public interface ITemplateSource
     {

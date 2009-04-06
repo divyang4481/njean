@@ -42,7 +42,9 @@ namespace Lsd.NJean
         /// Renders the template using the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <param name="writer">The writer.</param>
+        /// <param name="writer">
+        /// A <see cref="T:System.IO.TextWriter"/> to be used for output.
+        /// </param>
         void Render(ITemplateContext context, TextWriter writer);
     }
 }
