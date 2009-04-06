@@ -27,44 +27,39 @@ namespace Lsd.NJean
     /// </summary>
     /// <author>
     /// <a href="mailto:george.labak@gmail.com">Labak</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
     /// </author>
     public interface ITemplateProvider
     {
         /// <summary>
-        /// Gets the template source.
+        /// Loads a template.
         /// </summary>
-        /// <value>The template source.</value>
-        ITemplateSource TemplateSource { get; }
-
-        /// <summary>
-        /// Loads a template from the specified source.
-        /// </summary>
-        /// <param name="templateSource">The source of the template.</param>
+        /// <param name="templateName">The name of the template.</param>
         /// <returns>The template.</returns>
-        ITemplate Load(string templateSource);
+        ITemplate Load(string templateName);
 
         /// <summary>
         /// Tries to a template from the specified source.
         /// </summary>
-        /// <param name="templateSource">The source of the template.</param>
-        /// <param name="loadedTemplate">The template to be loaded.</param>
-        /// <returns><c>true</c> if the template is loaded without exceptions, <c>true</c> otherwise</returns>
-        bool TryLoad(string templateSource, out ITemplate loadedTemplate);
+        /// <param name="templateName">The name of the template.</param>
+        /// <param name="loadedTemplate">
+        /// When this method returns, if the there was no error, contains
+        /// the loaded template. If there was a problem loading the template
+        /// it contains null.
+        /// </param>
+        /// <returns>
+        ///     <c>true</c> if the template is loaded without errors,
+        ///     <c>false</c> otherwise
+        /// </returns>
+        bool TryLoad(string templateName, out ITemplate loadedTemplate);
 
         /// <summary>
         /// Checks if the specified source exists.
         /// </summary>
-        /// <param name="templateSource">The template source.</param>
-        /// <returns><c>true</c> if the source exists, <c>true</c> otherwise.</returns>
-        bool Exists(string templateSource);
-
-        /// <summary>
-        /// Determines whether the specified template source is trusted.
-        /// </summary>
-        /// <param name="templateSource">The template source.</param>
+        /// <param name="templateName">The name of the template.</param>
         /// <returns>
-        ///    <c>true</c> if the specified template source is trusted; otherwise, <c>false</c>.
+        ///     <c>true</c> if the source exists, <c>false</c> otherwise.
         /// </returns>
-        bool IsTrusted(string templateSource);
+        bool Exists(string templateName);
     }
 }
