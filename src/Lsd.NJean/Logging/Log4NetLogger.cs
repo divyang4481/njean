@@ -28,6 +28,7 @@ namespace Lsd.NJean.Logging
     /// </summary>
     /// <author>   
     /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadists</a>
     /// </author>
     public partial class Log4NetLogger : ILogger
     {
@@ -55,15 +56,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsDebugEnabled
         {
-            get 
-            {
-                if (this.logger.IsDebugEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsDebugEnabled; }
         }
 
         /// <summary>
@@ -75,15 +68,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsInfoEnabled
         {
-            get 
-            {
-                if (this.logger.IsInfoEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsInfoEnabled; }
         }
 
         /// <summary>
@@ -95,15 +80,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsWarnEnabled
         {
-            get 
-            {
-                if (this.logger.IsWarnEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsWarnEnabled; }
         }
 
         /// <summary>
@@ -115,15 +92,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsErrorEnabled
         {
-            get 
-            {
-                if (this.logger.IsErrorEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsErrorEnabled; }
         }
 
         /// <summary>
@@ -135,15 +104,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsFatalEnabled
         {
-            get
-            {
-                if (this.logger.IsFatalEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsFatalEnabled; }
         }
 
         /// <overloads>
@@ -156,10 +117,7 @@ namespace Lsd.NJean.Logging
         /// <param name="message">The message.</param>
         public void Debug(string message)
         {
-            if (this.logger.IsDebugEnabled)
-            {
-                this.logger.Debug(message);
-            }
+            this.logger.Debug(message);
         }
 
         /// <summary>
@@ -169,10 +127,7 @@ namespace Lsd.NJean.Logging
         /// <param name="exception">The exception.</param>
         public void Debug(string message, Exception exception)
         {
-            if (this.logger.IsDebugEnabled)
-            {
-                this.logger.Debug(message, exception);
-            }
+            this.logger.Debug(message, exception);
         }
 
         /// <overloads>
@@ -185,10 +140,7 @@ namespace Lsd.NJean.Logging
         /// <param name="message">The message.</param>
         public void Info(string message)
         {
-            if (this.logger.IsInfoEnabled)
-            {
-                this.logger.Info(message);
-            }
+            this.logger.Info(message);
         }
 
         /// <summary>
@@ -198,10 +150,7 @@ namespace Lsd.NJean.Logging
         /// <param name="exception">The exception.</param>
         public void Info(string message, Exception exception)
         {
-            if (this.logger.IsInfoEnabled)
-            {
-                this.logger.Info(message, exception);
-            }
+            this.logger.Info(message, exception);
         }
 
         /// <overloads>
@@ -214,10 +163,7 @@ namespace Lsd.NJean.Logging
         /// <param name="message">The message.</param>
         public void Warn(string message)
         {
-            if (this.logger.IsWarnEnabled)
-            {
-                this.logger.Warn(message);
-            }
+            this.logger.Warn(message);
         }
 
         /// <summary>
@@ -227,10 +173,7 @@ namespace Lsd.NJean.Logging
         /// <param name="exception">The exception.</param>
         public void Warn(string message, Exception exception)
         {
-            if (this.logger.IsWarnEnabled)
-            {
-                this.logger.Warn(message, exception);
-            }
+            this.logger.Warn(message, exception);
         }
 
         /// <overloads>
@@ -243,10 +186,7 @@ namespace Lsd.NJean.Logging
         /// <param name="message">The message.</param>
         public void Error(string message)
         {
-            if (this.logger.IsErrorEnabled)
-            {
-                this.logger.Error(message);
-            }
+            this.logger.Error(message);
         }
 
         /// <summary>
@@ -256,10 +196,7 @@ namespace Lsd.NJean.Logging
         /// <param name="exception">The exception.</param>
         public void Error(string message, Exception exception)
         {
-            if (this.logger.IsErrorEnabled)
-            {
-                this.logger.Error(message, exception);
-            }
+            this.logger.Error(message, exception);
         }
 
         /// <overloads>
@@ -272,10 +209,7 @@ namespace Lsd.NJean.Logging
         /// <param name="message">The message.</param>
         public void Fatal(string message)
         {
-            if (this.logger.IsFatalEnabled)
-            {
-                this.logger.Fatal(message);
-            }
+            this.logger.Fatal(message);
         }
 
         /// <summary>
@@ -285,10 +219,7 @@ namespace Lsd.NJean.Logging
         /// <param name="exception">The exception.</param>
         public void Fatal(string message, Exception exception)
         {
-            if (this.logger.IsFatalEnabled)
-            {
-                this.logger.Fatal(message, exception);
-            }
+            this.logger.Fatal(message, exception);
         }
 
         #endregion
