@@ -65,15 +65,7 @@ namespace Lsd.NJean.Logging
         /// </value>
         public bool IsDebugEnabled
         {
-            get 
-            {
-                if (this.logger.IsDebugEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsDebugEnabled; }
         }
 
         /// <summary>
