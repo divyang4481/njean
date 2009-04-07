@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace Lsd.NJean
+namespace Lsd.NJean.Logging
 {
     #region Imports
 

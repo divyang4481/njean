@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace Lsd.NJean
+namespace Lsd.NJean.Logging
 {
     #region Imports
 
@@ -147,11 +147,11 @@ namespace Lsd.NJean
         }
 
         /// <overloads>
-        /// Logs the specified Debug level message. 
+        /// Writes the diagnostic message at the Debug level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Debug level message.
+        /// Writes the diagnostic message at the Debug level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Debug(string message)
@@ -163,7 +163,7 @@ namespace Lsd.NJean
         }
 
         /// <summary>
-        /// Logs the specified Debug level message.
+        /// Writes the diagnostic message at the Debug level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
@@ -176,11 +176,11 @@ namespace Lsd.NJean
         }
 
         /// <overloads>
-        /// Logs the specified Info level message. 
+        /// Writes the diagnostic message at the Info level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Info level message.
+        /// Writes the diagnostic message at the Info level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Info(string message)
@@ -192,7 +192,7 @@ namespace Lsd.NJean
         }
 
         /// <summary>
-        /// Logs the specified Info level message.
+        /// Writes the diagnostic message at the Info level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
@@ -205,11 +205,11 @@ namespace Lsd.NJean
         }
 
         /// <overloads>
-        /// Logs the specified Warn level message. 
+        /// Writes the diagnostic message at the Warn level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Warn level message.
+        /// Writes the diagnostic message at the Warn level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Warn(string message)
@@ -221,7 +221,7 @@ namespace Lsd.NJean
         }
 
         /// <summary>
-        /// Logs the specified Warn level message.
+        /// Writes the diagnostic message at the Warn level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
@@ -234,11 +234,11 @@ namespace Lsd.NJean
         }
 
         /// <overloads>
-        /// Logs the specified Error level message. 
+        /// Writes the diagnostic message at the Error level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Error level message.
+        /// Writes the diagnostic message at the Error level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Error(string message)
@@ -250,7 +250,7 @@ namespace Lsd.NJean
         }
 
         /// <summary>
-        /// Logs the specified Error level message.
+        /// Writes the diagnostic message at the Error level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
@@ -263,11 +263,11 @@ namespace Lsd.NJean
         }
 
         /// <overloads>
-        /// Logs the specified Fatal level message. 
+        /// Writes the diagnostic message at the Fatal level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Fatal level message.
+        /// Writes the diagnostic message at the Fatal level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Fatal(string message)
@@ -279,7 +279,7 @@ namespace Lsd.NJean
         }
 
         /// <summary>
-        /// Logs the specified Fatal level message.
+        /// Writes the diagnostic message at the Fatal level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>

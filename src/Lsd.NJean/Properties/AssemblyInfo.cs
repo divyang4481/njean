@@ -11,9 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 #region Imports
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -29,3 +31,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
 [assembly: CLSCompliant(true)]
+
+[module: SuppressMessage(
+    "Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", 
+    Scope = "namespace", Target = "Lsd.NJean.Logging")]

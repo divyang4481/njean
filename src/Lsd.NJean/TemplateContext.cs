@@ -143,7 +143,14 @@ namespace Lsd.NJean
         /// </exception>
         public void Add(string key, object value)
         {
-            this.innerDictionary.Add(key, value);
+            if (this.ContainsKey(key))
+            {
+                this[key] = value;
+            }
+            else
+            {
+                this.innerDictionary.Add(key, value);
+            }
         }
 
         /// <summary>
