@@ -1,4 +1,4 @@
-﻿// <copyright file="ITemplateSource.cs" company="Liquid Software Development">
+﻿// <copyright file="ITemplateOrigin.cs" company="Liquid Software Development">
 // Copyright 2008-2009 Liquid Software Development - http://www.liquidsd.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,13 +23,14 @@ namespace Lsd.NJean
     #endregion
 
     /// <summary>
-    /// Base interface that describes a template's source.
+    /// Base interface that describes a template's origin.
     /// </summary>
     /// <author>
     /// <a href="mailto:george.labak@gmail.com">Labak</a>
     /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
     /// </author>
-    public interface ITemplateSource
+    public interface ITemplateOrigin
     {
         /// <summary>
         /// Gets or sets a value indicating whether this instance is trusted.

@@ -17,17 +17,29 @@
 	
 	<target name="code-analysis" depends="compile-debug">
 		<styleCopCmd
-			outputXmlFile="build\stylecop.xml"
+			outputXmlFile="build\Debug\results\stylecop.xml"
 			transformFile="tools\StyleCopCmd\StyleCopReport.xsl"
 			styleCopSettingsFile="src\Settings.StyleCop"
 			processorSymbols="DEBUG, CODE_ANALYSIS"
 			ignorePatterns="AssemblyInfo\.cs">
-			<solutionFiles>
-				<include name="src\Lsd.NJean.sln" />
-			</solutionFiles>
+			<projectFiles>
+				<include name="src\Lsd.NJean\Lsd.NJean.csproj" />
+			</projectFiles>
 		</styleCopCmd>
-		<exec program="tools\FxCop\FxCopCmd.exe" commandline="/p:src\NJean.fxcop /fo /o:build\fxcop.xml" failonerror="false"/>
-		<style style="tools\FxCop\Xml\CodeAnalysisReport.xsl" in="build\fxcop.xml" out="build\fxcop.html" />
+		<exec program="tools\FxCop\FxCopCmd.exe" commandline="/p:src\NJean.fxcop /fo /o:build\Debug\results\fxcop.xml" failonerror="false"/>
+		<style style="tools\FxCop\Xml\CodeAnalysisReport.xsl" in="build\Debug\results\fxcop.xml" out="build\Debug\results\fxcop.html" />
+	</target>
+	
+	<target name="test" depends="compile-debug" verbose="true">
+		<nunit2>
+			<formatter type="Xml" usefile="true" extension=".xml" outputdir="build\Debug\results" />
+			<formatter type="Plain" />
+			<test assemblyname="build\Debug\Lsd.NJean.Tests.dll" />
+		</nunit2>
+	</target>
+	
+	<target name="debug-all" depends="compile-debug code-analysis test">
+		<echo message="Done!" />
 	</target>
 
 </project>
