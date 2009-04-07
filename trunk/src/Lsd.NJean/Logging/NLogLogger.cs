@@ -14,7 +14,7 @@
 // limitations under the License.
 // </copyright>
 
-namespace Lsd.NJean
+namespace Lsd.NJean.Logging
 {
     #region Imports
 
@@ -24,10 +24,11 @@ namespace Lsd.NJean
     #endregion
 
     /// <summary>
-    /// NLogLogger is a simple implementation of ILogger in Log4Net.
+    /// NLog implementation of <see cref="Lsd.NJean.Logging.ILogger"/>
     /// </summary>
     /// <author>   
     /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
+    /// <a href="mailto:diadistis@gmail.com">Diadists</a>
     /// </author>
     public partial class NLogLogger : ILogger
     {
@@ -36,9 +37,18 @@ namespace Lsd.NJean
         /// <summary>
         /// Initializes a new instance of the <see cref="NLogLogger"/> class.
         /// </summary>
-        public NLogLogger() 
+        public NLogLogger()
         {
-            this.logger = LogManager.GetLogger("NJeanLogger");
+            this.logger = LogManager.GetCurrentClassLogger();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NLogLogger"/> class.
+        /// </summary>
+        /// <param name="name">The logger name.</param>
+        public NLogLogger(string name)
+        {
+            this.logger = LogManager.GetLogger(name);
         }
     }
 
@@ -75,15 +85,7 @@ namespace Lsd.NJean
         /// </value>
         public bool IsInfoEnabled
         {
-            get 
-            {
-                if (this.logger.IsInfoEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsInfoEnabled; }
         }
 
         /// <summary>
@@ -95,15 +97,7 @@ namespace Lsd.NJean
         /// </value>
         public bool IsWarnEnabled
         {
-            get 
-            {
-                if (this.logger.IsWarnEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsWarnEnabled; }
         }
 
         /// <summary>
@@ -115,15 +109,7 @@ namespace Lsd.NJean
         /// </value>
         public bool IsErrorEnabled
         {
-            get 
-            {
-                if (this.logger.IsErrorEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsErrorEnabled; }
         }
 
         /// <summary>
@@ -135,160 +121,122 @@ namespace Lsd.NJean
         /// </value>
         public bool IsFatalEnabled
         {
-            get
-            {
-                if (this.logger.IsFatalEnabled)
-                {
-                    return true;
-                }
-
-                return false;
-            }
+            get { return this.logger.IsFatalEnabled; }
         }
 
         /// <overloads>
-        /// Logs the specified Debug level message. 
+        /// Writes the diagnostic message at the Debug level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Debug level message.
+        /// Writes the diagnostic message at the Debug level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Debug(string message)
         {
-            if (this.logger.IsDebugEnabled)
-            {
-                this.logger.Debug(message);
-            }
+            this.logger.Debug(message);
         }
 
         /// <summary>
-        /// Logs the specified Debug level message.
+        /// Writes the diagnostic message at the Debug level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
         public void Debug(string message, Exception exception)
         {
-            if (this.logger.IsDebugEnabled)
-            {
-                this.logger.DebugException(message, exception);
-            }
+            this.logger.DebugException(message, exception);
         }
 
         /// <overloads>
-        /// Logs the specified Info level message. 
+        /// Writes the diagnostic message at the Info level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Info level message.
+        /// Writes the diagnostic message at the Info level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Info(string message)
         {
-            if (this.logger.IsInfoEnabled)
-            {
-                this.logger.Info(message);
-            }
+            this.logger.Info(message);
         }
 
         /// <summary>
-        /// Logs the specified Info level message.
+        /// Writes the diagnostic message at the Info level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
         public void Info(string message, Exception exception)
         {
-            if (this.logger.IsInfoEnabled)
-            {
-                this.logger.InfoException(message, exception);
-            }
+            this.logger.InfoException(message, exception);
         }
 
         /// <overloads>
-        /// Logs the specified Warn level message. 
+        /// Writes the diagnostic message at the Warn level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Warn level message.
+        /// Writes the diagnostic message at the Warn level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Warn(string message)
         {
-            if (this.logger.IsWarnEnabled)
-            {
-                this.logger.Warn(message);
-            }
+            this.logger.Warn(message);
         }
 
         /// <summary>
-        /// Logs the specified Warn level message.
+        /// Writes the diagnostic message at the Warn level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
         public void Warn(string message, Exception exception)
         {
-            if (this.logger.IsWarnEnabled)
-            {
-                this.logger.WarnException(message, exception);
-            }
+            this.logger.WarnException(message, exception);
         }
 
         /// <overloads>
-        /// Logs the specified Error level message. 
+        /// Writes the diagnostic message at the Error level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Error level message.
+        /// Writes the diagnostic message at the Error level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Error(string message)
         {
-            if (this.logger.IsErrorEnabled)
-            {
-                this.logger.Error(message);
-            }
+            this.logger.Error(message);
         }
 
         /// <summary>
-        /// Logs the specified Error level message.
+        /// Writes the diagnostic message at the Error level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
         public void Error(string message, Exception exception)
         {
-            if (this.logger.IsErrorEnabled)
-            {
-                this.logger.ErrorException(message, exception);
-            }
+            this.logger.ErrorException(message, exception);
         }
 
         /// <overloads>
-        /// Logs the specified Fatal level message. 
+        /// Writes the diagnostic message at the Fatal level. 
         /// Can be addressed with an exception to be included in the log.
         /// </overloads>
         /// <summary>
-        /// Logs the specified Fatal level message.
+        /// Writes the diagnostic message at the Fatal level.
         /// </summary>
         /// <param name="message">The message.</param>
         public void Fatal(string message)
         {
-            if (this.logger.IsFatalEnabled)
-            {
-                this.logger.Fatal(message);
-            }
+            this.logger.Fatal(message);
         }
 
         /// <summary>
-        /// Logs the specified Fatal level message.
+        /// Writes the diagnostic message at the Fatal level.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="exception">The exception.</param>
         public void Fatal(string message, Exception exception)
         {
-            if (this.logger.IsFatalEnabled)
-            {
-                this.logger.FatalException(message, exception);
-            }
+            this.logger.FatalException(message, exception);
         }
 
         #endregion

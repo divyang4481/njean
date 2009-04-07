@@ -108,7 +108,6 @@ namespace Lsd.NJean.Tests
 
             // Act & Assert
             templateContext.Add("key3", "value3");
-            templateContext.Add("key4", 4);
         }
     }
 }
