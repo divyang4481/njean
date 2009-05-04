@@ -27,9 +27,15 @@ namespace Lsd.NJean.Tests
    
     #endregion
 
+    /// <summary>
+    /// Template context tests
+    /// </summary>
     [TestFixture]
     public class TemplateContextTest
     {
+        /// <summary>
+        /// Constructors the with dictionary copies dictionary entries.
+        /// </summary>
         [Test]
         public void ConstructorWithDictionaryCopiesDictionaryEntries()
         {
@@ -51,6 +57,9 @@ namespace Lsd.NJean.Tests
             Assert.AreEqual(2, templateContext["key2"]);
         }
 
+        /// <summary>
+        /// Constructors the with template context copies context entries.
+        /// </summary>
         [Test]
         public void ConstructorWithTemplateContextCopiesContextEntries()
         {
@@ -72,6 +81,9 @@ namespace Lsd.NJean.Tests
             Assert.AreEqual(2, templateContext["key2"]);
         }
 
+        /// <summary>
+        /// Checks the read only dictionary.
+        /// </summary>
         [Test]
         [ExpectedException(typeof(NotSupportedException))]
         public void CheckReadOnlyDictionary()
@@ -90,6 +102,9 @@ namespace Lsd.NJean.Tests
             readOnlyDictionary.Add("key3", "value3");
         }
 
+        /// <summary>
+        /// Constructors the with read only dictionary is writable.
+        /// </summary>
         [Test]
         public void ConstructorWithReadOnlyDictionaryIsWritable()
         {

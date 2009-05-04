@@ -28,9 +28,16 @@ namespace Lsd.NJean
     /// </summary>
     /// <author>
     /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
+    /// <a href="mailto:labak.george@gmail.com">labak</a>
     /// </author>
     public interface ITemplate
     {
+        /// <summary>
+        /// Gets or sets the template origin.
+        /// </summary>
+        /// <value>The template origin.</value>
+        ITemplateOrigin TemplateOrigin { get; set; }
+
         /// <summary>
         /// Renders the template using the specified context.
         /// </summary>
