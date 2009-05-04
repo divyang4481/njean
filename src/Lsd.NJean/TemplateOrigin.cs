@@ -1,4 +1,4 @@
-﻿// <copyright file="ITemplateOrigin.cs" company="Liquid Software Development">
+﻿// <copyright file="TemplateOrigin.cs" company="Liquid Software Development">
 // Copyright 2008-2009 Liquid Software Development - http://www.liquidsd.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,39 +17,78 @@
 namespace Lsd.NJean
 {
     #region Imports
-
     using System;
-
     #endregion
-
+   
     /// <summary>
-    /// Base interface that describes a template's origin.
+    /// The origin of the template
     /// </summary>
     /// <author>
-    /// <a href="mailto:george.labak@gmail.com">Labak</a>
-    /// <a href="mailto:laodimos@gmail.com">Laodimos</a>
-    /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
+    /// <a href="mailto:labak.george@gmail.com">labak</a>
     /// </author>
-    public interface ITemplateOrigin
+    public class TemplateOrigin : ITemplateOrigin
     {
+        #region ITemplateOrigin Members
+
+        private bool isTrusted;
+
+        private ITemplateProvider templateProvider;
+
+        private string templateSource;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is trusted.
         /// </summary>
         /// <value>
         ///    <c>true</c> if this instance is trusted; otherwise, <c>false</c>.
         /// </value>
-        bool IsTrusted { get; set; }
+        public bool IsTrusted
+        {
+            get
+            {
+                return this.isTrusted;
+            }
+
+            set
+            {
+                this.isTrusted = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the template provider.
         /// </summary>
         /// <value>The template provider.</value>
-        ITemplateProvider TemplateProvider { get; set; }
+        public ITemplateProvider TemplateProvider
+        {
+            get
+            {
+                return this.templateProvider;
+            }
+
+            set
+            {
+                this.templateProvider = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the template source.
         /// </summary>
         /// <value>The template source.</value>
-        string TemplateSource { get; set; }
+        public string TemplateSource
+        {
+            get
+            {
+                return this.templateSource;
+            }
+
+            set
+            {
+                this.templateSource = value;
+            }
+        }
+
+        #endregion
     }
 }

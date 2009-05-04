@@ -30,8 +30,9 @@ namespace Lsd.NJean
     /// </summary>
     /// <author>
     /// <a href="mailto:diadistis@gmail.com">Diadistis</a>
+    /// <a href="mailto:labak.george@gmail.com">labak</a>
     /// </author>
-    public class Template : ITemplate
+    public partial class Template : ITemplate
     {
         #region ITemplate Members
 
@@ -64,6 +65,47 @@ namespace Lsd.NJean
             throw new NotImplementedException();
         }
 
-        #endregion
+        #endregion    
+    }
+
+    public partial class Template : ITemplate
+    {
+        private ITemplateOrigin templateOrigin;
+
+        private string templateContent;
+
+        /// <summary>
+        /// Gets or sets the content of the template.
+        /// </summary>
+        /// <value>The content of the template.</value>
+        public string TemplateContent
+        {
+            get
+            {
+                return this.templateContent;
+            }
+
+            set
+            {
+                this.templateContent = value;
+            }
+        }        
+
+        /// <summary>
+        /// Gets or sets the template origin.
+        /// </summary>
+        /// <value>The template origin.</value>
+        public ITemplateOrigin TemplateOrigin
+        {
+            get
+            {
+                return this.templateOrigin;
+            }
+
+            set
+            {
+                this.templateOrigin = value;
+            }
+        }    
     }
 }
