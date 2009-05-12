@@ -35,7 +35,7 @@ namespace Lsd.NJean
         /// </summary>
         /// <param name="templatePath">The template path.</param>
         /// <returns>A template</returns>
-        public ITemplate Load(string templatePath)
+        public Template Load(string templatePath)
         {
             Template template = new Template();
             template.TemplateContent = File.OpenText(templatePath).ReadToEnd();
@@ -51,7 +51,7 @@ namespace Lsd.NJean
         /// <param name="templatePath">The template path.</param>
         /// <param name="loadedTemplate">The loaded template.</param>
         /// <returns>True on a successfull load. False otherwise.</returns>
-        public bool TryLoad(string templatePath, out ITemplate loadedTemplate)
+        public bool TryLoad(string templatePath, out Template loadedTemplate)
         {
             loadedTemplate = null; 
             try
