@@ -19,6 +19,7 @@ namespace Lsd.NJean
     #region imports
     using System;
     using System.IO;
+    using System.Security.AccessControl;
     #endregion
     /// <summary>
     /// An implementation of the ITemplateProvider interface.
@@ -35,7 +36,7 @@ namespace Lsd.NJean
         /// </summary>
         /// <param name="templatePath">The template path.</param>
         /// <returns>A template</returns>
-        public Template Load(string templatePath)
+        public ITemplate Load(string templatePath)
         {
             Template template = new Template();
             template.TemplateContent = File.OpenText(templatePath).ReadToEnd();
@@ -51,22 +52,15 @@ namespace Lsd.NJean
         /// <param name="templatePath">The template path.</param>
         /// <param name="loadedTemplate">The loaded template.</param>
         /// <returns>True on a successfull load. False otherwise.</returns>
-        public bool TryLoad(string templatePath, out Template loadedTemplate)
+        public bool TryLoad(string templatePath, out ITemplate loadedTemplate)
         {
-            loadedTemplate = null; 
-            try
+            if (File.Exists(templatePath))
             {
                 loadedTemplate = this.Load(templatePath);
                 return true;
             }
-            catch (FileLoadException ex)
-            {
-                return false;
-            }
-            catch (FileNotFoundException ex)
-            {
-                return false;
-            }
+            loadedTemplate = null;
+            return false;
         }
 
         /// <summary>

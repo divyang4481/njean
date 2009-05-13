@@ -70,7 +70,7 @@ namespace Lsd.NJean
 
     public partial class Template : ITemplate
     {
-        private TemplateOrigin templateOrigin = new TemplateOrigin();
+        private ITemplateOrigin templateOrigin = new TemplateOrigin();
 
         private string templateContent;
 
@@ -95,7 +95,7 @@ namespace Lsd.NJean
         /// Gets or sets the template origin.
         /// </summary>
         /// <value>The template origin.</value>
-        public TemplateOrigin TemplateOrigin
+        public ITemplateOrigin TemplateOrigin
         {
             get
             {

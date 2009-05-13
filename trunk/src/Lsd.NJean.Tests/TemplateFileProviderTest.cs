@@ -29,41 +29,54 @@ namespace Lsd.NJean.Tests
     [TestFixture]
     public class TemplateFileProviderTest
     {
-        private TemplateFileProvider fileProvider = new TemplateFileProvider();
-        private Template testTemplate = new Template();
+        //private TemplateFileProvider fileProvider = new TemplateFileProvider();
+        //private ITemplate testTemplate;// = new Template();
 
         [Test]
         [ExpectedException(typeof(FileNotFoundException))]
         public void LoadNonExistingTemplate()
         {
-            this.fileProvider.Load("unknown");
+            TemplateFileProvider fileProvider = new TemplateFileProvider();
+
+            fileProvider.Load("unknown");
         }
 
         [Test]
         public void TryLoadNonExistingTemplate()
         {
-            Assert.IsFalse(this.fileProvider.TryLoad("unknown", out this.testTemplate));            
+            ITemplate testTemplate;
+            TemplateFileProvider fileProvider = new TemplateFileProvider();
+
+            Assert.IsFalse(fileProvider.TryLoad("unknown", out testTemplate));            
         }
 
         [Test]
         public void LoadTemplate()
         {
-            this.testTemplate = this.fileProvider.Load("files/dummy.tpl");
-            Assert.AreEqual(this.testTemplate.TemplateContent, "test");
+            ITemplate testTemplate;
+            TemplateFileProvider fileProvider = new TemplateFileProvider();
+
+            testTemplate = fileProvider.Load("files/dummy.tpl");
+            Assert.AreEqual(((Template)testTemplate).TemplateContent, "test");
         }
 
         [Test]
         public void TryLoadTemplate()
         {
-            this.fileProvider.TryLoad("files/dummy.tpl", out this.testTemplate);
-            Assert.AreEqual(this.testTemplate.TemplateContent, "test");
+            ITemplate testTemplate;
+            TemplateFileProvider fileProvider = new TemplateFileProvider();
+
+            fileProvider.TryLoad("files/dummy.tpl", out testTemplate);
+            Assert.AreEqual(((Template)testTemplate).TemplateContent, "test");
         }
 
         [Test]
         public void TemplateExists()
         {
-            Assert.IsTrue(this.fileProvider.Exists("files/dummy.tpl"));
-            Assert.IsFalse(this.fileProvider.Exists("unknown"));
+            TemplateFileProvider fileProvider = new TemplateFileProvider();
+
+            Assert.IsTrue(fileProvider.Exists("files/dummy.tpl"));
+            Assert.IsFalse(fileProvider.Exists("unknown"));
         }
     }
 }
