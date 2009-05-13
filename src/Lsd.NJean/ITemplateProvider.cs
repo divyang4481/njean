@@ -38,7 +38,7 @@ namespace Lsd.NJean
         /// </summary>
         /// <param name="templateName">The name of the template.</param>
         /// <returns>The template.</returns>
-        Template Load(string templateName);
+        ITemplate Load(string templateName);
 
         /// <summary>
         /// Tries to a template from the specified source.
@@ -53,7 +53,7 @@ namespace Lsd.NJean
         ///     <c>true</c> if the template is loaded without errors,
         ///     <c>false</c> otherwise
         /// </returns>
-        bool TryLoad(string templateName, out Template loadedTemplate);
+        bool TryLoad(string templateName, out ITemplate loadedTemplate);
 
         /// <summary>
         /// Checks if the specified source exists.
