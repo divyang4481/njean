@@ -27,7 +27,7 @@ namespace Lsd.NJean
     /// <author>
     /// <a href="mailto:labak.george@gmail.com">labak</a>
     /// </author> 
-    public class TemplateFileProvider : ITemplateProvider
+    public class FileTemplateProvider : ITemplateProvider
     {
         #region ITemplateProvider Members
 
@@ -59,6 +59,7 @@ namespace Lsd.NJean
                 loadedTemplate = this.Load(templatePath);
                 return true;
             }
+
             loadedTemplate = null;
             return false;
         }
